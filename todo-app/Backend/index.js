@@ -37,6 +37,7 @@ app.get('/todos', async (req, res) => {
 
 app.put('/completed', async (req, res) => {
   const updatedPayload = req.body
+  console.log(updatedPayload)
   const parsedPayload = updateTodo.safeParse(updatedPayload)
   if (!parsedPayload.success) {
     res.status(411).json({
@@ -47,7 +48,7 @@ app.put('/completed', async (req, res) => {
   const todo = await Todo.findOne({
     _id: req.body.id
   })
-
+  console.log(todo)
   if (!todo) {
     res.json({
       msg: "You've sent the wrong id"
@@ -55,6 +56,7 @@ app.put('/completed', async (req, res) => {
   }
   else {
     todo.completed = true;
+    todo.save();
     res.json("Todo item was successfully updated")
   }
 });
