@@ -11,7 +11,9 @@ app.use(cors())
 
 app.post('/todo', async (req, res) => {
   const createPayload = req.body;
+  console.log(createPayload)
   const parsedPayload = createTodo.safeParse(createPayload)
+  console.log(parsedPayload)
   if (!parsedPayload.success) {
     res.status(411).json({
       msg: "You've sent the wrong inputs"
@@ -64,7 +66,7 @@ app.put('/completed', async (req, res) => {
   }
 });
 
-app.get('todo/', async (req, res) => {
+app.get('/todo', async (req, res) => {
   const id = req.query.id
   const todo = await Todo.findOne({
     id: id
