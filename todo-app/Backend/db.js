@@ -4,6 +4,7 @@ mongoose.connect("mongodb://localhost:27017/todo-app")
 
 
 const todoSchema = mongoose.Schema({
+  id: Number,
   title: String,
   desription: String,
   completed: Boolean

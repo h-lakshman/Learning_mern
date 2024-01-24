@@ -19,6 +19,7 @@ app.post('/todo', async (req, res) => {
     return;
   }
   await Todo.create({
+    id: createPayload.id,
     title: createPayload.title,
     description: createPayload.description,
     completed: false,
@@ -62,5 +63,15 @@ app.put('/completed', async (req, res) => {
     res.json("Todo item was successfully updated")
   }
 });
+
+app.get('todo/', async (req, res) => {
+  const id = req.query.id
+  const todo = await Todo.findOne({
+    id: id
+  })
+  res.json({
+    todo: todo
+  })
+})
 
 app.listen(port)
