@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BuisnessCard } from './components/BuisnessCard'
 function App() {
 
