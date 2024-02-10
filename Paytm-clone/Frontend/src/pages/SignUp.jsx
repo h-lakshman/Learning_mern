@@ -1,4 +1,4 @@
-import { BottomWarning } from "../components/BottomWarning"
+import { ButtonWarning } from "../components/ButtonWarning"
 import { Button } from "../components/Button"
 import Heading from "../components/Heading"
 import InputBox from "../components/InputBox"
@@ -17,7 +17,7 @@ export const SignUp = () => {
         <div className="pt-4">
           <Button label={"Sign up"} />
         </div>
-        <BottomWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
+        <ButtonWarning label={"Already have an account?"} buttonText={"Sign in"} to={"/signin"} />
       </div>
     </div>
   </div>

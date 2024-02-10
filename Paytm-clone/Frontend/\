@@ -1,0 +1,13 @@
+import Heading from '../components/Heading'
+import SubHeading from '../components/SubHeading'
+export const SignIn = () => {
+  return <div className="h-screen flex justify-center">
+    <div className="flex flex-col justify-center" >
+      <div>
+        <Heading label={'SignIn'} />
+        <SubHeading label={'Enter your credentials to to access your account'} />
+      </div>
+    </div>
+
+  </div>
+}
